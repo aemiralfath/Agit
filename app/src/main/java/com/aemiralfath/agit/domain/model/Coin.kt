@@ -12,10 +12,9 @@ data class Coin(
     val imageUrl: String,
     val algorithm: String,
     val url: String,
-    val blockTime: Int,
-    val maxSupply: Int,
-    val netHashesPerSecond: Int,
-    val blockNumber: Int,
-    val blockReward: Int,
+    val blockTime: Double,
+    val maxSupply: Double,
+    val blockNumber: Double,
+    val blockReward: Double,
     var isFavorite: Boolean
 ) : Parcelable

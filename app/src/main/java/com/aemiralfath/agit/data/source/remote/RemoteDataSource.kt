@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.flowOn
 class RemoteDataSource(private val apiService: ApiService) {
 
     suspend fun getListCrypto(
-        limit: Int = 10,
+        limit: Int,
         tysm: String = "USD"
     ): Flow<ApiResponse<List<CoinResponse>>> {
         return flow {

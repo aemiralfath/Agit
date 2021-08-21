@@ -18,11 +18,10 @@ object DataMapper {
                 data?.imageUrl.toString(),
                 data?.algorithm.toString(),
                 data?.url.toString(),
-                data?.blockTime ?: 0,
-                data?.maxSupply ?: 0,
-                data?.netHashesPerSecond ?: 0,
-                data?.blockNumber ?: 0,
-                data?.blockReward ?: 0
+                data?.blockTime ?: 0.0,
+                data?.maxSupply ?: 0.0,
+                data?.blockNumber ?: 0.0,
+                data?.blockReward ?: 0.0
             )
             list.add(coin)
         }
@@ -41,7 +40,6 @@ object DataMapper {
                 it.url,
                 it.blockTime,
                 it.maxSupply,
-                it.netHashesPerSecond,
                 it.blockNumber,
                 it.blockReward,
                 it.isFavorite
@@ -58,7 +56,6 @@ object DataMapper {
         input.url,
         input.blockTime,
         input.maxSupply,
-        input.netHashesPerSecond,
         input.blockNumber,
         input.blockReward,
         input.isFavorite

@@ -19,7 +19,9 @@ class CoinRepository(
     override fun getAllCoin(): Flow<Resource<List<Coin>>> =
         object : NetworkBoundResource<List<Coin>, List<CoinResponse>>() {
             override fun loadFromDB(): Flow<List<Coin>> =
-                localDataSource.getAllCoin().map { DataMapper.mapEntitiesToDomain(it) }
+                localDataSource.getAllCoin().map {
+                    DataMapper.mapEntitiesToDomain(it)
+                }
 
             override fun shouldFetch(data: List<Coin>?): Boolean =
                 data == null || data.isEmpty()
@@ -34,7 +36,9 @@ class CoinRepository(
         }.asFlow()
 
     override fun getFavoriteCoin(): Flow<List<Coin>> {
-        return localDataSource.getFavoriteCoin().map { DataMapper.mapEntitiesToDomain(it) }
+        return localDataSource.getFavoriteCoin().map {
+            DataMapper.mapEntitiesToDomain(it)
+        }
     }
 
     override fun setFavoriteCoin(coin: Coin, state: Boolean) {

@@ -32,19 +32,16 @@ data class CoinInfo(
     val url: String? = null,
 
     @field:SerializedName("BlockTime")
-    val blockTime: Int? = null,
+    val blockTime: Double? = null,
 
     @field:SerializedName("MaxSupply")
-    val maxSupply: Int? = null,
-
-    @field:SerializedName("NetHashesPerSecond")
-    val netHashesPerSecond: Int? = null,
+    val maxSupply: Double? = null,
 
     @field:SerializedName("BlockNumber")
-    val blockNumber: Int? = null,
+    val blockNumber: Double? = null,
 
     @field:SerializedName("BlockReward")
-    val blockReward: Int? = null,
+    val blockReward: Double? = null,
 
     @field:SerializedName("DocumentType")
     val documentType: String? = null,

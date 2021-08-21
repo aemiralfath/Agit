@@ -7,10 +7,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CoinDao {
 
-    @Query("SELECT * FROM coin")
+    @Query("SELECT * FROM coin ORDER BY blockReward DESC")
     fun getAllCoin(): Flow<List<CoinEntity>>
 
-    @Query("SELECT * FROM coin where isFavorite = 1")
+    @Query("SELECT * FROM coin where isFavorite = 1 ORDER BY blockReward DESC")
     fun getFavoriteCoin(): Flow<List<CoinEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

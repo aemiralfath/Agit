@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Agit</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btc">BTC</string>
+    <string name="bitcoin">Bitcoin</string>
+    <string name="_6_54">6.54</string>
+    <string name="_2009_01_03">2009-01-03</string>
+    <string name="not_found">Coin not found</string>
+    <string name="something_wrong">Oops.. something wrong</string>
 </resources>

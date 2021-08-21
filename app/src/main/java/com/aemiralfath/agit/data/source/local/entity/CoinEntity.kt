@@ -1,13 +1,10 @@
 package com.aemiralfath.agit.data.source.local.entity
 
-import android.os.Parcelable
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
 @Entity(tableName = "coin")
 data class CoinEntity(
     @PrimaryKey
@@ -34,20 +31,17 @@ data class CoinEntity(
     val url: String,
 
     @ColumnInfo(name = "blockTime")
-    val blockTime: Int,
+    val blockTime: Double,
 
     @ColumnInfo(name = "maxSupply")
-    val maxSupply: Int,
-
-    @ColumnInfo(name = "netHashesPerSecond")
-    val netHashesPerSecond: Int,
+    val maxSupply: Double,
 
     @ColumnInfo(name = "blockNumber")
-    val blockNumber: Int,
+    val blockNumber: Double,
 
     @ColumnInfo(name = "blockReward")
-    val blockReward: Int,
+    val blockReward: Double,
 
     @ColumnInfo(name = "isFavorite")
     var isFavorite: Boolean = false
-) : Parcelable
+)

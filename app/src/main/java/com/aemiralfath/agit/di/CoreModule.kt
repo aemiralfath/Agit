@@ -1,9 +1,14 @@
 package com.aemiralfath.agit.di
 
 import androidx.room.Room
+import com.aemiralfath.agit.BuildConfig
+import com.aemiralfath.agit.data.CoinRepository
+import com.aemiralfath.agit.data.source.local.LocalDataSource
 import com.aemiralfath.agit.data.source.local.room.CoinDatabase
+import com.aemiralfath.agit.data.source.remote.RemoteDataSource
 import com.aemiralfath.agit.data.source.remote.network.ApiService
-import net.sqlcipher.BuildConfig
+import com.aemiralfath.agit.domain.repository.ICoinRepository
+import com.aemiralfath.agit.utils.AppExecutors
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -45,4 +50,11 @@ val networkModule = module {
 
         retrofit.create(ApiService::class.java)
     }
+}
+
+val repositoryModule = module {
+    single { LocalDataSource(get()) }
+    single { RemoteDataSource(get()) }
+    factory { AppExecutors() }
+    single<ICoinRepository> { CoinRepository(get(), get(), get()) }
 }

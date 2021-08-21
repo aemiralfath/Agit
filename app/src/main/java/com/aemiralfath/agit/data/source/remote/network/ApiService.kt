@@ -9,7 +9,7 @@ interface ApiService {
     @GET("/data/top/totaltoptiervolfull")
     suspend fun getListCrypto(
         @Query("limit") limit: Int,
-        @Query("tysm") tysm: String
+        @Query("tsym") tsym: String
     ): CryptoResponse
 
 }
