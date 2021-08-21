@@ -1,4 +1,4 @@
-package com.aemiralfath.agit.ui.home
+package com.aemiralfath.agit.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +9,9 @@ import com.aemiralfath.agit.databinding.CoinItemBinding
 import com.aemiralfath.agit.domain.model.Coin
 import java.util.*
 
-class HomeAdapter(
+class CoinAdapter(
     private val onClick: (Coin) -> Unit
-) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
+) : RecyclerView.Adapter<CoinAdapter.HomeViewHolder>() {
 
     private var listData = ArrayList<Coin>()
     fun setData(newListData: List<Coin>?) {

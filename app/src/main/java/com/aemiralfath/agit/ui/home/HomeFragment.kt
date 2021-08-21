@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.aemiralfath.agit.R
 import com.aemiralfath.agit.data.Resource
 import com.aemiralfath.agit.databinding.FragmentHomeBinding
+import com.aemiralfath.agit.ui.CoinAdapter
 import com.aemiralfath.agit.ui.detail.DetailCoinActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -21,7 +22,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var homeAdapter: HomeAdapter
+    private lateinit var coinAdapter: CoinAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {
-            homeAdapter = HomeAdapter {
+            coinAdapter = CoinAdapter {
                 val intent = Intent(activity, DetailCoinActivity::class.java)
                 intent.putExtra(DetailCoinActivity.EXTRA_DATA, it)
                 startActivity(intent)
@@ -50,7 +51,7 @@ class HomeFragment : Fragment() {
         with(binding) {
             rvHome.layoutManager = LinearLayoutManager(context)
             rvHome.setHasFixedSize(true)
-            rvHome.adapter = homeAdapter
+            rvHome.adapter = coinAdapter
         }
 
         homeViewModel.setCoin().observe(viewLifecycleOwner, {
@@ -59,7 +60,7 @@ class HomeFragment : Fragment() {
                     is Resource.Loading -> showLoading(true)
                     is Resource.Success -> {
                         showLoading(false)
-                        homeAdapter.setData(it.data)
+                        coinAdapter.setData(it.data)
                     }
                     is Resource.Error -> {
                         showLoading(false)
