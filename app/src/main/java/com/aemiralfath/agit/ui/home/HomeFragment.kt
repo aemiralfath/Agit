@@ -1,14 +1,17 @@
 package com.aemiralfath.agit.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aemiralfath.agit.R
 import com.aemiralfath.agit.data.Resource
 import com.aemiralfath.agit.databinding.FragmentHomeBinding
+import com.aemiralfath.agit.ui.detail.DetailCoinActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
@@ -33,10 +36,9 @@ class HomeFragment : Fragment() {
 
         if (activity != null) {
             homeAdapter = HomeAdapter {
-                // move intent
-//                val intent = Intent(activity, DetailMovieActivity::class.java)
-//                intent.putExtra(DetailMovieActivity.EXTRA_DATA, it)
-//                startActivity(intent)
+                val intent = Intent(activity, DetailCoinActivity::class.java)
+                intent.putExtra(DetailCoinActivity.EXTRA_DATA, it)
+                startActivity(intent)
             }
 
             populateView()
@@ -58,13 +60,14 @@ class HomeFragment : Fragment() {
                     is Resource.Success -> {
                         showLoading(false)
                         homeAdapter.setData(it.data)
-                        binding.viewEmpty.root.visibility =
-                            if (it.data?.isNotEmpty() == true) View.GONE else View.VISIBLE
                     }
                     is Resource.Error -> {
                         showLoading(false)
-                        binding.viewError.tvError.text =
-                            it.message ?: getString(R.string.something_wrong)
+                        Toast.makeText(
+                            context,
+                            getString(R.string.something_wrong),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
             }

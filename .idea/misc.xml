@@ -5,9 +5,11 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_broken_image_black.xml" value="0.21145833333333333" />
         <entry key="app/src/main/res/drawable/ic_error.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/layout/activity_detail_coin.xml" value="0.12635869565217392" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12635869565217392" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/coin_item.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/content_detail_coin.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.12635869565217392" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2" />
