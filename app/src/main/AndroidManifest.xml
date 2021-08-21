@@ -14,8 +14,8 @@
         android:theme="@style/Theme.Agit">
         <activity
             android:name=".ui.detail.DetailCoinActivity"
-            android:theme="@style/Theme.Agit.NoActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Agit.NoActionBar" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"

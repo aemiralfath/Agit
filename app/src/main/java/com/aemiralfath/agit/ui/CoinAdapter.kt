@@ -38,17 +38,15 @@ class CoinAdapter(
         private val binding = CoinItemBinding.bind(itemView)
 
         fun bind(coin: Coin) {
-            with(binding) {
-                val formatter = Formatter()
-                formatter.format("%.3f", coin.blockReward)
+            val formatter = Formatter()
+            formatter.format("%.3f", coin.blockReward)
 
-                tvNameItem.text = coin.name
-                tvDateItem.text = coin.date
-                tvFullnameItem.text = coin.fullName
-                tvRewardItem.text = formatter.toString()
-                itemView.setOnClickListener {
-                    onClick(coin)
-                }
+            binding.tvNameItem.text = coin.name
+            binding.tvDateItem.text = coin.date
+            binding.tvFullnameItem.text = coin.fullName
+            binding.tvRewardItem.text = formatter.toString()
+            itemView.setOnClickListener {
+                onClick(coin)
             }
         }
     }

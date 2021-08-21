@@ -10,5 +10,3 @@ data class CryptoResponse(
     @field:SerializedName("Data")
     val data: List<CoinResponse>? = null,
 )
-
-

@@ -16,5 +16,4 @@ val viewModelModule = module {
     viewModel { HomeViewModel(get()) }
     viewModel { FavoriteViewModel(get()) }
     viewModel { DetailCoinViewModel(get()) }
-
 }
